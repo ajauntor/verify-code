@@ -25,9 +25,9 @@
             </div>
             <div class="col-md-6">
                 <div class="input-section half-width">
-                    <input class="form-control" type="text">
+                    <input id="type-pin" class="form-control" type="text">
                     <div class="numbers">
-                        <div class="calc-body">
+                        <div id="digit-container" class="calc-body">
                             <div class="calc-button-row">
                                 <div class="button">7</div>
                                 <div class="button">8</div>
@@ -49,7 +49,7 @@
                                 <div class="button">C</div>
                             </div>
                             <div>
-                                <button type="submit" class="submit-btn">Submit</button>
+                                <button onclick="checkPin()" type="submit" class="submit-btn">Submit</button>
                                 <p class="action-left">3 try left</p>
                             </div>
                         </div>
@@ -57,34 +57,60 @@
                 </div>
             </div>
             <div class="notify-section">
-                <p class="notify">❌ Pin Didn't Match, Please try again</p>
-                <p class="notify">✅ Pin Matched... Secret door is opening for you</p>
+                <p id="incorrect-pin" class="notify">❌ Pin Didn't Match, Please try again</p>
+                <p id="correct-pin" class="notify">✅ Your Identity Is Verified</p>
             </div>
         </div>
 
-        <script>
+     <script src="script.js"></script>
+
+            <!-- // // Create 4 digit pin with a function
+            // function createPin() {
+            //     const getPin = Math.random() * 10000;
+            //     const pinSplit = (getPin + "").split(".")[0];
+
+            //     if (pinSplit.length === 4) {
+            //         return pinSplit;
+            //     }
+            //     else {
+            //         return createPin();
+            //     }
+            // }
+
+            // function pinClick() {
+            //     const input = document.getElementById("generatePin");
+            //     input.value = createPin();
+            // }
+
+            // // Handle calculator button event
+            // const buttonContainer = document.getElementById("digit-container");
+            // buttonContainer.addEventListener("click", function(event){
+            //     const digit = event.target.innerText;
+            //     if(isNaN(digit)){
+
+            //     }
+            //     else{
+            //         const typed = document.getElementById("type-pin");
+            //         typed.value = typed.value + digit;
+            //     }
+            // })
+
+            // // Check pin function
+            // function checkPin(){
+            //     const pin = document.getElementById("generatePin").value;
+            //     const typedPin = document.getElementById("type-pin").value;
+            //     if(pin === typedPin){
+            //         const correct = document.getElementById("correct-pin");
+            //         correct.style.display="block";
+            //     }
+            //     else{
+            //         const correct = document.getElementById("incorrect-pin");
+            //         correct.style.display="block";
+            //     }
+
+            // } -->
 
 
-            function getPin() {
-                const random = Math.random() * 10000;
-                const pin = (random + '').split('.')[0];
-                if (pin.length === 4) {
-                    return pin;
-                }
-                else {
-                    return getPin();
-                }
-            }
-
-            // Display generated pin Code
-            function pinClick() {
-                const inputPin = document.getElementById("generatePin");
-                inputPin.value = getPin();
-            }
-
-
-
-        </script>
 
 </body>
 
